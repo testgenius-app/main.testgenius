@@ -273,7 +273,7 @@ export default function SignUpPage() {
         throw new Error("Verification token not found. Please register again.")
       }
 
-      const response = await api.post(API_ENDPOINTS.AUTH.RESEND_CODE || "/api/v1/auth/resend-code", {
+      const response = await api.post("/api/v1/auth/resend-code", {
         token: verificationToken,
       })
 
@@ -451,7 +451,7 @@ export default function SignUpPage() {
               <div className="relative bg-background px-4 text-sm text-muted-foreground">or sign up with</div>
             </div>
 
-            <div className="grid gap-3">
+            {/* <div className="grid gap-3">
               <SocialButton
                 provider="google"
                 icon={
@@ -495,7 +495,7 @@ export default function SignUpPage() {
               >
                 Sign up with Meta
               </SocialButton>
-            </div>
+            </div> */}
 
             <div className="text-center text-sm">
               <span className="text-muted-foreground">Already have an account?</span>{" "}
@@ -526,7 +526,7 @@ export default function SignUpPage() {
                   <VerificationCodeInput
                     onChange={setVerificationCode}
                     error={!!errors.verificationCode}
-                    errorMessage={errors.verificationCode}
+                    // errorMessage={errors.verificationCode}
                   />
                 </div>
 

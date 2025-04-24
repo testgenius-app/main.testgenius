@@ -249,7 +249,7 @@ export default function SignInPage() {
           <div className="relative bg-background px-4 text-sm text-muted-foreground">or continue with</div>
         </div>
 
-        <div className="grid gap-3">
+        {/* <div className="grid gap-3">
           <SocialButton
             provider="google"
             icon={
@@ -293,7 +293,7 @@ export default function SignInPage() {
           >
             Continue with Meta
           </SocialButton>
-        </div>
+        </div> */}
 
         <div className="text-center text-sm">
           <span className="text-muted-foreground">Don't have an account?</span>{" "}
