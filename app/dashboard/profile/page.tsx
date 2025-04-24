@@ -43,7 +43,7 @@ export default function ProfilePage() {
         if (data && data.id) {
           setUser(data)
         } else {
-          const response = await fetch("http://localhost:4000/api/v1/auth/whoami", {
+          const response = await fetch(process.env.NEXT_PUBLIC_API_URL+"/api/v1/auth/whoami", {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${localStorage.getItem("access_token")}`,

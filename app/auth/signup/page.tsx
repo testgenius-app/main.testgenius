@@ -320,7 +320,7 @@ export default function SignUpPage() {
 
   const handleSocialSignUp = (provider: string) => {
     if (provider === "Google") {
-      window.location.href = "http://localhost:4000/api/auth/google"
+      window.location.href = process.env.NEXT_PUBLIC_API_URL+"/api/auth/google"
     } else if (provider === "Meta") {
       // Will be implemented when backend is ready
       toast({
