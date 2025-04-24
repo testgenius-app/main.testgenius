@@ -2,8 +2,7 @@
 import axios from "axios"
 import { TOKEN_KEYS } from "./auth"
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
-
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL
 // Create an axios instance with default config
 export const api = axios.create({
   baseURL: API_BASE_URL,

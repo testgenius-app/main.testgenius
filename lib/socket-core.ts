@@ -2,7 +2,7 @@ import { io, type Socket } from "socket.io-client"
 
 // Shared socket configuration
 export const SOCKET_CONFIG = {
-  BASE_URL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000",
+  BASE_URL: process.env.NEXT_PUBLIC_API_URL,
   RECONNECTION_ATTEMPTS: 5,
   RECONNECTION_DELAY: 1000,
 }

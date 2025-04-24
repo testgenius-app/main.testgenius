@@ -54,7 +54,7 @@ class SocketService {
       const accessToken = getAuthToken()
       console.log(`Creating ${namespace} socket with token:`, accessToken ? "Token exists" : "No token")
 
-      const socketUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"
+      const socketUrl = process.env.NEXT_PUBLIC_API_URL
       const socket = io(`${socketUrl}/${namespace}`, {
         auth: { accessToken },
         transports: ["websocket", "polling"],
@@ -74,10 +74,10 @@ class SocketService {
         this.notifyListeners(namespace, COMMON_EVENTS.DISCONNECT, reason)
       })
 
-      socket.on(COMMON_EVENTS.CONNECT_ERROR, (error) => {
-        console.error(`${namespace} socket connection error:`, error)
-        this.notifyListeners(namespace, COMMON_EVENTS.CONNECT_ERROR, error)
-      })
+      // socket.on(COMMON_EVENTS.CONNECT_ERROR, (error) => {
+      //   console.error(`${namespace} socket connection error:`, error)
+      //   this.notifyListeners(namespace, COMMON_EVENTS.CONNECT_ERROR, error)
+      // })
 
       this.sockets.set(namespace, socket)
       this.listeners.set(namespace, new Map())

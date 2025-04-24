@@ -42,7 +42,7 @@ export default function TestMonitorPage() {
   // Set up WebSocket connection
   useEffect(() => {
     // Get the API URL from environment variables or use a default
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
     console.log("Establishing WebSocket connection to:", apiUrl)
 
